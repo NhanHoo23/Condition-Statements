@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <table>
+        <tr>
+            <td>
+                <label for="math" style="font-size: 23px;">Môn toán</label>
+            </td>
+            <td>
+                <input type="text" id="math">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="literature" style="font-size: 23px;">Môn Văn</label>
+            </td>
+            <td>
+                <input type="text" id="literature">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="eng" style="font-size: 23px;">Môn Anh</label>
+            </td>
+            <td>
+                <input type="text" id="eng">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="area" style="font-size: 23px;">Khu vực</label>
+            </td>
+            <td>
+                <select id="area">
+                    <option value="KV1">KV1</option>
+                    <option value="KV2-NT">KV2-NT</option>
+                    <option value="KV2">KV2</option>
+                    <option value="KV3">KV3</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="getResult()">Tính điểm</button>
+    <p id="printResult"></p>
+</body>
+<script>
+    function getResult() {
+        let math = parseInt(document.getElementById("math").value);
+        let lite = parseInt(document.getElementById("literature").value);
+        let eng = parseInt(document.getElementById("eng").value);
+        let score = math + lite + eng;
+        // document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+         
+        switch (document.getElementById("area").value) {
+            case "KV1": result = score + 0.75;
+            document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+            break;
+            case "KV2-NT": result = score + 0.5;
+            document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+            break;
+            case "KV2": result = score + 0.25;
+            document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+            break;
+            case "KV3": result = score;
+            document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+            break;
+        }
+    }
+</script>
+</html>
