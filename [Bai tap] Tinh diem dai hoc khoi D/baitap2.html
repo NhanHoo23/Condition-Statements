@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input{
+            width: 65px;
+        }
+    </style>
 </head>
 <body>
     <h1>Tính điểm ĐH khối D</h1>
@@ -39,6 +44,7 @@
             </td>
             <td>
                 <select id="area">
+                    <option value="">---</option>
                     <option value="KV1">KV1</option>
                     <option value="KV2-NT">KV2-NT</option>
                     <option value="KV2">KV2</option>
@@ -49,7 +55,7 @@
     </table>
     <br>
     <button onclick="getResult()">Tính điểm</button>
-    <p id="printResult"></p>
+    <p id="printResult" style="color: red; font-size: 23px;"></p>
 </body>
 <script>
     function getResult() {
@@ -57,8 +63,7 @@
         let lite = parseInt(document.getElementById("literature").value);
         let eng = parseInt(document.getElementById("eng").value);
         let score = math + lite + eng;
-        // document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
-         
+
         switch (document.getElementById("area").value) {
             case "KV1": result = score + 0.75;
             document.getElementById("printResult").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
