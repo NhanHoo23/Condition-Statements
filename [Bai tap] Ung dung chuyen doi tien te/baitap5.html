@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td,th,p{
+            padding-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="amount" style="width: 65px;">
+            </td>
+            <th>
+                <select name="" id="fromCurrency">
+                    <option value="vietnam">VND</option>
+                    <option value="america">USD</option>
+                </select>
+            </th>
+            <th>
+                <select name="" id="toCurrency">
+                    <option value="america">USD</option>
+                    <option value="vietnam">VND</option>
+                </select>
+            </th>
+            <th>
+                <button onclick="convert()">Convert</button>
+            </th>
+        </tr>
+    </table>
+    <p id="result" style="color: blue;"></p>
+</body>
+<script>
+    function convert() {
+        let price = Number(document.getElementById("amount").value);
+        if (document.getElementById("fromCurrency").value === "vietnam") {
+            switch (document.getElementById("toCurrency").value) {
+                case "america": result = price/23000
+                    document.getElementById("result").innerHTML = "Result "+result;
+                    break;
+                case "vietnam": result = price
+                    document.getElementById("result").innerHTML = "Result "+result;
+                    break;
+            }
+        } else if (document.getElementById("fromCurrency").value === "america") {
+            switch (document.getElementById("toCurrency").value) {
+                case "america": result = price
+                    document.getElementById("result").innerHTML = "Result "+result;
+                    break;
+                case "vietnam": result = price*23000
+                    document.getElementById("result").innerHTML = "Result "+result;
+                    break;
+            }
+        }
+    } 
+    
+</script>
+</html>
