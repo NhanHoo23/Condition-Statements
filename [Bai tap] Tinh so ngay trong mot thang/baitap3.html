@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Nhập năm</h2>
+    <input type="text" id="year">
     <h2>Nhập tháng cần tính</h2>
     <input type="text" id="month">
     <button onclick="getDays()">Tính số ngày</button>
@@ -23,19 +25,23 @@
                 case 8:
                 case 10:
                 case 12:
-                    let day1 = 31
-                    document.getElementById("result").innerHTML = "Tháng "+month+" có "+days+" ngày."
+                    document.getElementById("result").innerHTML = "Tháng "+month+" có 31 ngày."
                     break;
                 case 2:
-                    let day2 = "28 hoặc 29"
-                    document.getElementById("result").innerHTML = "Tháng "+month+" có "+day2+" ngày."
+                    let year = Number(document.getElementById("year").value);
+                    if (year % 4 == 0 && year % 100 != 0) {
+                        document.getElementById("result").innerHTML = "Tháng "+month+" có 29 ngày.";
+                    } else if (year % 400 == 0) {
+                        document.getElementById("result").innerHTML = "Tháng "+month+" có 29 ngày.";
+                    } else {
+                        document.getElementById("result").innerHTML = "Tháng "+month+" có 28 ngày.";
+                    }
                     break;
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    let day3 = 30
-                    document.getElementById("result").innerHTML = "Tháng "+month+" có "+day3+" ngày." 
+                    document.getElementById("result").innerHTML = "Tháng "+month+" có 30 ngày." 
                     break;
             }
         }
