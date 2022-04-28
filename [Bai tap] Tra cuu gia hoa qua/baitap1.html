@@ -17,18 +17,21 @@
         function fruitPrice() {
             let fruit = document.getElementById("fruit").value;
             switch(fruit) {
-                case "Ổi": document.getElementById("price").innerHTML = "20000 VNĐ/kg"
+                case "Ổi": 
+                case "Dưa hấu": 
+                document.getElementById("price").innerHTML = "20000 VNĐ/kg"
                 break;
-                case "Dưa hấu": document.getElementById("price").innerHTML = "20000 VNĐ/kg"
+
+                case "Táo": 
+                case "Xoài": 
+                document.getElementById("price").innerHTML = "30000 VNĐ/kg"
                 break;
-                case "Táo": document.getElementById("price").innerHTML = "30000 VNĐ/kg"
+                
+                case "Cam": 
+                case "Chôm chôm": 
+                document.getElementById("price").innerHTML = "40000 VNĐ/kg"
                 break;
-                case "Xoài": document.getElementById("price").innerHTML = "30000 VNĐ/kg"
-                break;
-                case "Cam": document.getElementById("price").innerHTML = "40000 VNĐ/kg"
-                break;
-                case "Chôm chôm": document.getElementById("price").innerHTML = "40000 VNĐ/kg"
-                break;
+                
                 case "Măng cụt": document.getElementById("price").innerHTML = "50000 VNĐ/kg"
                 break;
             }
